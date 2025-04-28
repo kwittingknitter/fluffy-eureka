@@ -1,0 +1,253 @@
+openapi: 3.0.4
+info:
+  title: OLIS API
+  description: The Oregon Legislature freely provides the legislative measure, committee, and 
+    legislative member data used in the Oregon Legislative Information System (OLIS) to the public 
+    in an Open Data ​Protocol (OData) API. Oregon's Legislative OData API provides complete and 
+    up-to-date session information.  Available data and the data models used can be 
+    found on https://www.oregonlegislature.gov/citizen_engagement/Documents/OLOData-Model.pdf.
+  version: 1.0.0
+
+servers:
+  - url: https://api.oregonlegislature.gov/odata/odataservice.svc/
+      
+
+paths:
+  /Measures:
+    get:
+      summary: Returns a list of measures.
+      parameters:
+        - in: query
+          name: $filter
+          schema:
+            type: string
+          required: false
+          allowReserved: true
+          description: Filters for getting measures. Running the example returns measures from the current, ongoing legislative session.
+          example: LegislativeSession/DefaultSession eq true
+        - in: query
+          name: $expand
+          schema:
+            type: string
+          required: false
+          allowReserved: true
+          description: Specifies related resources to include in the response. Related resources for Measures include LegislativeSession, MeasureVote, MeasureSponsors, CommitteeVotes. 
+            Running the example returns votes for each measure returned.
+          example: MeasureVote, MeasureSponsors
+        - in: query
+          name: $select
+          schema:
+            type: string
+          required: false
+          allowReserved: true
+          description: Specifies properties to include in the response. Related resources for Measures include LegislativeSession, MeasureVote, MeasureSponsors, CommitteeVotes.
+            If the properties are associated with related resources, those resources must be specified in the $expand query. 
+            Running the example returns specific properties from the related resources specified in the example for the $expand query.
+          example: MeasureVote/Vote, MeasureVote/VoteName, MeasureSponsor/LegislatoreCode
+        - in: query
+          name: $format
+          schema:
+            type: string
+            enum: [json, verbosejson, xml]
+            default: json
+          required: false
+          allowReserved: true
+          description: Specifies which format the server should use in its response.
+      responses:
+        "200": # status code
+          description: A JSON object
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  odata.metadata:
+                    type: string
+                  value: 
+                    type: array
+                    items:
+                      $ref: "#/components/schemas/LegislativeSession"
+  /LegislativeSessions:
+    get:
+      summary: Returns a list of legislative sessions.
+      parameters:
+        - in: query
+          name: $filter
+          schema:
+            type: string
+          required: false
+          allowReserved: true
+          description: Filters for getting legislative sessions. Running the example returns the current, ongoing legislative session.
+          example: DefaultSession eq true
+        - in: query
+          name: $expand
+          schema:
+            type: string
+            enum: [Legislators, Committees, Measures]
+          required: false
+          allowReserved: true
+          description: Specifies related resources to include in the response. Running the example returns legislators who served during the sessions returned. 
+            Find related resources on https://www.oregonlegislature.gov/citizen_engagement/Documents/OLOData-Model.pdf.
+          example: Legislators
+        - in: query
+          name: $format
+          schema:
+            type: string
+            enum: [json, verbosejson, xml]
+            default: json
+          required: false
+          allowReserved: true
+          description: Specifies which format the server should use in its response.
+      responses:
+        "200": # status code
+          description: A JSON object
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  odata.metadata:
+                    type: string
+                  value: 
+                    type: array
+                    items:
+                      $ref: "#/components/schemas/LegislativeSession"
+  /Legislators:
+    get:
+      summary: Returns a list of legislators.
+      parameters:
+        - in: query
+          name: $filter
+          schema:
+            type: string
+          required: false
+          allowReserved: true
+          description: Filters for getting legislators. Running the example returns legislators who served in the 2023 Regular Session.
+          example: SessionKey eq '2023R1'
+        - in: query
+          name: $expand
+          schema:
+            type: string
+            enum: [LegislativeSession]
+          required: false
+          allowReserved: true
+          description: Specifies related resources to include in the response.
+        - in: query
+          name: $format
+          schema:
+            type: string
+            enum: [json, verbosejson, xml]
+            default: json
+          required: false
+          allowReserved: true
+          description: Specifies which format the server should use in its response.
+      responses:
+        "200": # status code
+          description: A JSON object
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  odata.metadata:
+                    type: string
+                  value: 
+                    type: array
+                    items:
+                      $ref: "#/components/schemas/Legislator"
+  # /Legislators(SessionKey={session}, LegislatorCode={legCode}):
+  #   get:
+  #     summary: Returns a legislator by key properties, the session key and legislator code.
+  #     parameters:
+  #       - in: path
+  #         name: session
+  #         schema:
+  #           type: string
+  #         required: true
+  #         description: Session key of the legislator to get.
+  #         example: 2023R1
+  #         allowReserved: true
+  #       - in: path
+  #         name: legCode
+  #         schema:
+  #           type: string
+  #         required: true
+  #         description: Legislator code of the legislator to get.
+  #         example: Sen Lieber
+  #         allowReserved: true
+  #       - in: query
+  #         name: $format
+  #         schema:
+  #           type: string
+  #           enum: [json, verbosejson, xml]
+  #           default: json
+  #         required: false
+  #         allowReserved: true
+  #         description: Specifies which format the server should use in its response.
+  #     responses:
+  #       "200": # status code
+  #         description: A JSON object
+  #         content:
+  #           application/json:
+  #             schema:
+  #               type: object
+  #               $ref: "#/components/schemas/Legislator"
+
+                  
+
+components:
+  schemas:
+    LegislativeSession:
+      type: object
+      properties: 
+        SessionKey:
+          type: string
+        BeginDate:
+          type: string
+          format: date-time
+        EndDate:
+          type: string
+          format: date-time
+          nullable: true
+        CreatedDate: 
+          type: string
+          format: date-time
+        ModifiedDate:
+          type: string
+          format: date-time
+        DefaultSession:
+          type: boolean
+    Legislator:
+      type: object
+      properties:
+        SessionKey:
+          type: string
+        LegislatorCode:
+          type: string
+        FirstName:
+          type: string
+        LastName:
+          type: string
+        CapitolAddress:
+          type: string
+        CapitolPhone:
+          type: string
+        Title:
+          type: string
+        Chamber:
+          type: string
+        Party:
+          type: string
+        DistrictNumber:
+          type: string
+        EmailAddress:
+          type: string
+          format: email
+        WebSiteUrl:
+          type: string
+        CreatedDate:
+          type: string
+          format: date-time
+        ModifiedDate:
+          type: string
+          format: date-time
