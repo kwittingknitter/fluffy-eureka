@@ -3,7 +3,7 @@ Unit tests for the OlisAPI wrapper
 '''
 
 
-import requests, unittest
+import unittest, json
 
 from unittest.mock import MagicMock, patch
 
@@ -13,28 +13,33 @@ from tests import constants as test_constants
 
 
 class TestOlisAPIUnit(unittest.TestCase):
+    """
+    Unit tests for OlisAPI wrapper
+    """
+    api = None
 
-    @patch('requests.Session')
-    def test_get_current_session(self, mock):
+    def setUp(self):
+        self.api = OlisAPI()
+        self.api.session = MagicMock()
+
+
+    def test_get_current_session(self):
         """Test code for getting current session"""
-        mock.return_value.get.return_value = {
-            "odata.metadata": "endpoint_for_olisAPI/$metadata#EntityName",
-            "value": ""
-        }
+        # Set up mocked return value
+        self.api.session.get.return_value = MockSessionValue({
+                "odata.metadata": "endpoint_for_olisAPI/$metadata#EntityName",
+                "value": ""
+            })
 
-        def get_endpoint(op: utils.Operation):
-            return test_constants.UNIT_CURRENT_SESSION_ENDPOINT
+        mocked_response = self.api.get_current_session()
+        self.assertIsNotNone(mocked_response)
+        self.api.session.get.assert_called_once()
+        self.api.session.get.assert_called_with(test_constants.GET_CURRENT_SESSION_ENDPOINT+'&$format=json')
 
-        with patch('wrapper.utils.get_endpoint', get_endpoint):
-            api = OlisAPI()
-            api.session = mock
-            mocked_response = api.get_current_session()
-            mock.assert_called_with('get', test_constants.UNIT_CURRENT_SESSION_ENDPOINT)
-
-    @patch('requests.Session')
-    def test_get_legislator(self, mock):
+    def test_get_legislator(self):
         """Test code for getting legislator"""
-        mock.return_value.get.return_value = {
+        # Set up mocked return value
+        self.api.session.get.return_value = MockSessionValue({
             "odata.metadata": "endpoint_for_olisAPI/$metadata#EntityName/@Element",
             "SessionKey": test_constants.UNIT_SESSION_KEY,
             "LegislatorCode": "Sen Senn",
@@ -50,17 +55,24 @@ class TestOlisAPIUnit(unittest.TestCase):
             "WebSiteUrl": "olis_url.gov/leg_website",
             "CreatedDate": "2022-11-22T14:14:14",
             "ModifiedDate": "2025-01-15T12:12:12"
-        }
+        })
 
-        def get_endpoint(op: utils.Operation):
-            return test_constants.UNIT_GET_LEGISLATOR_ENDPOINT
+        mocked_response = self.api.get_legislator(test_constants.UNIT_SESSION_KEY, test_constants.UNIT_LEG_CODE)
+        self.assertIsNotNone(mocked_response)
+        self.api.session.get.assert_called_once()
+        self.api.session.get.assert_called_with(
+            test_constants.GET_LEGISLATOR_ENDPOINT.format(test_constants.UNIT_SESSION_KEY, 
+                                                          test_constants.UNIT_LEG_CODE)+'?$format=json')
 
-        with patch('wrapper.utils.get_endpoint', get_endpoint):
-            api = OlisAPI()
-            api.session = mock
-            mocked_response = api.get_legislator(test_constants.UNIT_SESSION_KEY, test_constants.UNIT_LEG_CODE)
-            mocked_response.assert_called_with('get', test_constants.UNIT_GET_LEGISLATOR_ENDPOINT)
 
+class MockSessionValue:
+    value = {}
+
+    def __init__(self, value: dict):
+        self.value = value
+    
+    def json(self):
+        return json.dumps(self.value)
 
 if __name__ == '__main__':
     unittest.main()

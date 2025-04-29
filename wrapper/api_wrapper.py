@@ -17,7 +17,7 @@ class OlisAPI:
     def get_current_session(self):
         endpoint = self._json_format(
             utils.get_endpoint(utils.Operation.GET_CURRENT_SESSION))
-        return self.session.get(endpoint).json() #TODO return Session object in json
+        return self.session.get(endpoint).json()
     
     def get_legislator(self, session_key: str, legislator_code: str):
         endpoint = self._json_format(
