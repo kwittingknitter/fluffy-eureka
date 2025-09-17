@@ -12,8 +12,6 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v5
-        with:
-          repository: kwittingknitter/fluffy-eureka
       
       - name: Run Makefile install target for tests
         run: make install-test
