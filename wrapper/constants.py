@@ -1,3 +1,8 @@
+"""
+Constants for wrapper
+"""
+
+
 BASE_URL = 'https://api.oregonlegislature.gov/odata/odataservice.svc/'
 ENDPOINT = {
     'legislators': 'Legislators',
@@ -15,4 +20,3 @@ EXPAND = {
     'current_session': 'Legislators, Committees',
     'bills': 'Measure'
 }
-

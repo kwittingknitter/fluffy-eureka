@@ -3,11 +3,12 @@ Unit tests for the OlisAPI wrapper
 '''
 
 
-import unittest, json
+import unittest
+import json
 
-from unittest.mock import MagicMock, patch
+from unittest.mock import MagicMock
 
-from wrapper import OlisAPI, utils
+from wrapper import OlisAPI
 
 from tests import constants as test_constants
 
@@ -34,7 +35,8 @@ class TestOlisAPIUnit(unittest.TestCase):
         mocked_response = self.api.get_current_session()
         self.assertIsNotNone(mocked_response)
         self.api.session.get.assert_called_once()
-        self.api.session.get.assert_called_with(test_constants.GET_CURRENT_SESSION_ENDPOINT+'&$format=json')
+        self.api.session.get.assert_called_with(
+            test_constants.GET_CURRENT_SESSION_ENDPOINT+'&$format=json')
 
     def test_get_legislator(self):
         """Test code for getting legislator"""
@@ -57,20 +59,24 @@ class TestOlisAPIUnit(unittest.TestCase):
             "ModifiedDate": "2025-01-15T12:12:12"
         })
 
-        mocked_response = self.api.get_legislator(test_constants.UNIT_SESSION_KEY, test_constants.UNIT_LEG_CODE)
+        mocked_response = self.api.get_legislator(
+            test_constants.UNIT_SESSION_KEY, test_constants.UNIT_LEG_CODE)
         self.assertIsNotNone(mocked_response)
         self.api.session.get.assert_called_once()
         self.api.session.get.assert_called_with(
-            test_constants.GET_LEGISLATOR_ENDPOINT.format(test_constants.UNIT_SESSION_KEY, 
-                                                          test_constants.UNIT_LEG_CODE)+'?$format=json')
+            test_constants.GET_LEGISLATOR_ENDPOINT.format(
+                test_constants.UNIT_SESSION_KEY, test_constants.UNIT_LEG_CODE)+'?$format=json')
 
 
 class MockSessionValue:
+    """
+    Mock response
+    """
     value = {}
 
     def __init__(self, value: dict):
         self.value = value
-    
+
     def json(self):
         return json.dumps(self.value)
 

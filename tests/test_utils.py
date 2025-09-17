@@ -4,7 +4,7 @@ Unit tests for wrapper.utils
 
 import unittest
 
-from wrapper.utils import *
+from wrapper.utils import Operation, get_endpoint
 
 from tests.constants import *
 
@@ -18,17 +18,17 @@ class TestGetEndpoint(unittest.TestCase):
 
     def test_get_legislator(self):
         self.assertEqual(get_endpoint(Operation.GET_LEG), GET_LEGISLATOR_ENDPOINT)
-    
+
     def test_get_legislator_bills(self):
-        self.assertEqual(get_endpoint(Operation.GET_LEG_BILLS), 
+        self.assertEqual(get_endpoint(Operation.GET_LEG_BILLS),
                          GET_LEGISLATOR_BILLS)
-    
+
     def test_get_legislator_chief_bills(self):
-        self.assertEqual(get_endpoint(Operation.GET_LEG_CHIEF_BILLS), 
+        self.assertEqual(get_endpoint(Operation.GET_LEG_CHIEF_BILLS),
                          GET_LEGISLATOR_CHIEF_BILLS)
-    
+
     def test_get_legislator_bills_enrolled(self):
-        self.assertEqual(get_endpoint(Operation.GET_LEG_BILLS_ENROLLED), 
+        self.assertEqual(get_endpoint(Operation.GET_LEG_BILLS_ENROLLED),
                          GET_LEGISLATOR_BILLS_ENROLLED)
 
     def test_get_bad_operation(self):
