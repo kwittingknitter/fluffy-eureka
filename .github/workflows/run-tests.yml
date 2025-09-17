@@ -16,7 +16,7 @@ jobs:
           repository: kwittingknitter/fluffy-eureka
       
       - name: Run Makefile install target for tests
-        uses: make install-test
+        run: make install-test
 
       - name: Run Makefile test target
         run: make test
