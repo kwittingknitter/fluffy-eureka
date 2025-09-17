@@ -9,3 +9,6 @@ black:
 
 test:
 	python -m unittest discover -s tests
+
+install-test:
+	pip install -r requirements.txt
