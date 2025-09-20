@@ -1,6 +1,6 @@
-# fluffy-eureka
-
 ## About
+Exploring the publically available Oregon Legislative Information System OpenData API and the available data.
+
 Requirements: Python
 
 To set up, run `make install` in the Python environment of your choice
