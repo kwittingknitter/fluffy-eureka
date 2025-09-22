@@ -17,6 +17,7 @@ FILTERS = {
     'enrolled_bills': "Measure/CurrentLocation eq 'Chapter Number Assigned'" 
 }
 EXPAND = {
-    'current_session': 'Legislators, Committees',
+    'session': 'Legislators, Committees',
+    'session_bills': 'Measures',
     'bills': 'Measure'
 }

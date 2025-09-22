@@ -14,6 +14,8 @@ class Operation(Enum):
     GET_LEG_BILLS = 2
     GET_LEG_CHIEF_BILLS = 3
     GET_LEG_BILLS_ENROLLED = 4
+    GET_SESSIONS = 5
+    GET_SESSION_BILLS = 5
 
 def get_endpoint(operation: str) -> str:
     '''
@@ -23,7 +25,12 @@ def get_endpoint(operation: str) -> str:
         case Operation.GET_CURRENT_SESSION:
             return BASE_URL+"{}?$filter={} &$expand={}".format(
                 ENDPOINT['session'], FILTERS['current_session'],
-                EXPAND['current_session'])
+                EXPAND['session'])
+        case Operation.GET_SESSION_BILLS:
+            return BASE_URL+ENDPOINT['session']+"(SessionKey='{}')/?$expand="+EXPAND['session_bills']
+        case Operation.GET_SESSIONS:
+            return BASE_URL+"{}?$expand={}".format(
+                ENDPOINT['session'], EXPAND['session'])
         case Operation.GET_LEG:
             return BASE_URL+"{}".format(
                 ENDPOINT['legislators'])+"(SessionKey='{}', LegislatorCode='{}')"
