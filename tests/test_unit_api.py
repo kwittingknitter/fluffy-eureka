@@ -78,6 +78,7 @@ class MockSessionValue:
         self.value = value
 
     def json(self):
+        """Returns JSON formatted string"""
         return json.dumps(self.value)
 
 if __name__ == '__main__':

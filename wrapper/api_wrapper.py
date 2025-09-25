@@ -18,22 +18,27 @@ class OlisAPI:
         if '?' in endpoint:
             return endpoint + '&$format=json'
         return endpoint + '?$format=json'
-    
+
     def get_current_session(self) -> Response:
+        """Get current session"""
         endpoint = self._json_format(
             utils.get_endpoint(utils.Operation.GET_CURRENT_SESSION))
         return self.session.get(endpoint).json()
 
     def get_session_bills(self, session_key: str) -> Response:
-        endpoint = self._json_format(utils.get_endpoint(utils.Operation.GET_SESSION_BILLS).format(session_key))
+        """Get bills from a given session"""
+        endpoint = self._json_format(
+            utils.get_endpoint(utils.Operation.GET_SESSION_BILLS).format(session_key))
         return self.session.get(endpoint).json()
 
     def get_sessions(self) -> Response:
+        """Get all sessions"""
         endpoint = self._json_format(
             utils.get_endpoint(utils.Operation.GET_SESSIONS))
         return self.session.get(endpoint).json()
 
     def get_legislator(self, session_key: str, legislator_code: str) -> Response:
+        """Get a legislator"""
         endpoint = self._json_format(
             utils.get_endpoint(utils.Operation.GET_LEG).format(
             session_key, legislator_code))
@@ -44,6 +49,7 @@ class OlisAPI:
             session_key: str,
             legislator_key: str
         ) -> Response:
+        """Get a legislator's chief sponsored bills"""
         endpoint = self._json_format(
             utils.get_endpoint(utils.Operation.GET_LEG_CHIEF_BILLS).format(
                 session_key, legislator_key))
@@ -54,6 +60,7 @@ class OlisAPI:
             session_key: str,
             legislator_key: str
         ) -> Response:
+        """Get a legislator's sponsored bills"""
         endpoint = self._json_format(
             utils.get_endpoint(utils.Operation.GET_LEG_BILLS).format(session_key, legislator_key))
         return self.session.get(endpoint).json()
@@ -63,6 +70,7 @@ class OlisAPI:
             session_key: str,
             legislator_key: str
         ) -> Response:
+        """Get a legislator's sponsored bills that were enacted"""
         endpoint = self._json_format(
             utils.get_endpoint(
                 utils.Operation.GET_LEG_BILLS_ENROLLED).format(session_key, legislator_key))

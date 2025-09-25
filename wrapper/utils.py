@@ -5,17 +5,19 @@ Utils for wrapper
 
 from enum import Enum
 
-from wrapper.constants import *
+from wrapper.constants import BASE_URL, ENDPOINT, FILTERS, EXPAND
+from wrapper.errors import UnsupportedOperationError
 
 
 class Operation(Enum):
+    """Enum for supported operations in get_endpoint"""
     GET_LEG = 0
     GET_CURRENT_SESSION = 1
     GET_LEG_BILLS = 2
     GET_LEG_CHIEF_BILLS = 3
     GET_LEG_BILLS_ENROLLED = 4
     GET_SESSIONS = 5
-    GET_SESSION_BILLS = 5
+    GET_SESSION_BILLS = 6
 
 def get_endpoint(operation: str) -> str:
     '''
@@ -27,7 +29,8 @@ def get_endpoint(operation: str) -> str:
                 ENDPOINT['session'], FILTERS['current_session'],
                 EXPAND['session'])
         case Operation.GET_SESSION_BILLS:
-            return BASE_URL+ENDPOINT['session']+"(SessionKey='{}')/?$expand="+EXPAND['session_bills']
+            return BASE_URL+ENDPOINT['session']+\
+                "(SessionKey='{}')/?$expand="+EXPAND['session_bills']
         case Operation.GET_SESSIONS:
             return BASE_URL+"{}?$expand={}".format(
                 ENDPOINT['session'], EXPAND['session'])
@@ -48,5 +51,5 @@ def get_endpoint(operation: str) -> str:
                 ENDPOINT['sponsor'], FILTERS['bills_sponsored'],
                 FILTERS['enrolled_bills'], EXPAND['bills']
             )
-        case any:
-            raise Exception
+        case _:
+            raise UnsupportedOperationError()
