@@ -5,5 +5,10 @@ Requirements: Python
 
 To set up, run `make install` in the Python environment of your choice
 
-## Docs
-An OpenAPI [spec.yaml](./wrapper/docs/spec.yaml) is provided for the publically available Oregon Legislative Information System OpenData API. The OpenAPI doc spec file is incomplete, but includes some information about the endpoints used in the [wrapper](./wrapper).
+
+### Project setup
+
+- `/data` stores JSON file data 
+- `/scripts` contains notebooks that utilize the api wrapper to download data
+- `/tests` contains tests for the api wrapper
+- `/wrapper` contains the api wrapper
