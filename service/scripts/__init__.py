@@ -76,7 +76,7 @@ def _to_seed_data(data: dict):
                     party = leg["Party"],
                     begin_date = datetime.strptime(leg["CreatedDate"], format_string),
                     # TODO: fix; there are serveral nulls in leg["ModifiedDate"]
-                    end_date = datetime.now(), 
+                    end_date = datetime.now(),
                     session=session,
                     politician=politician,
                 )
