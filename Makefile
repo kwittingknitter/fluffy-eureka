@@ -5,7 +5,7 @@ install-test:
 	pip install -r requirements-test.txt
 
 lint:
-	pylint --recursive=y wrapper tests
+	pylint --recursive=y wrapper tests service
 
 black:
 	black wrapper tests
