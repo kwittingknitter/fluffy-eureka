@@ -28,6 +28,7 @@ def get_politicians(id: None):
     })
 
 
+# TODO: fix issue with datetime in leg
 @app.route('/legislators', defaults={'id': None})
 @app.route('/legislators/<int:id>')
 def get_legislators(id: None):
@@ -40,3 +41,7 @@ def get_legislators(id: None):
     return jsonify({
         "response": [LegislatorScheme().dump(r) for r in response]
     })
+
+# TODO: allow querying sessions
+# TODO: allow query politician by name
+# TODO: show legislator info when querying politician
