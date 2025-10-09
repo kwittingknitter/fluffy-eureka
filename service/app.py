@@ -1,6 +1,7 @@
 """ Flask app file """
 
 import os
+import sys
 import logging
 
 from flask import Flask
@@ -22,12 +23,13 @@ default_uri = "mysql+pymysql://{}:{}@{}:3306/{}".format(
 app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('SQLALCHEMY_DATABASE_URI', default_uri)
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['SQLALCHEMY_RECORD_QUERIES'] = True
-app.config['SQLALCHEMY_ECHO'] = True
+app.config['SQLALCHEMY_ECHO'] = "debug"
 app.config['FLASK_DEBUG'] = os.getenv('DEBUG', True)
 app.logger.setLevel(logging.DEBUG)
 
 db.init_app(app)
 
+# TODO: add check if db and tables exist before below
 with app.app_context():
     db.drop_all()
     db.create_all()

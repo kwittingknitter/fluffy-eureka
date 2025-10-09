@@ -24,7 +24,7 @@ class Legislator(Base):
     district_number: Mapped[int] = mapped_column(Integer)
     party: Mapped[str] = mapped_column(String(50))
     begin_date: Mapped[datetime] = mapped_column(DateTime)
-    end_date: Mapped[ datetime | None ] = DateTime
+    end_date: Mapped[ datetime | None ] = mapped_column(DateTime, nullable=True)
     politician_id: Mapped[int] = mapped_column(Integer, ForeignKey("politicians.id"))
     politician = relationship("Politician", back_populates="legislators")
     session_id: Mapped[int] = mapped_column(Integer, ForeignKey("sessions.id"))
@@ -77,7 +77,7 @@ class Politician(Base):
     id: Mapped[int] = mapped_column(Integer, primary_key=True)
     first_name: Mapped[str] = mapped_column(String(50))
     last_name: Mapped[str] = mapped_column(String(50))
-    legislators: Mapped[List["Legislator"]] = relationship(back_populates="politician")
+    legislators: Mapped[List["Legislator"]] = relationship(back_populates="politician", lazy="selectin")
 
     def __repr__(self):
         return f'<{self.first_name} {self.last_name}>'

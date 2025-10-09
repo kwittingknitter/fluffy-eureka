@@ -24,7 +24,6 @@ def insert_seed_data(db: SQLAlchemy):
     db.session.add_all(committees)
     db.session.commit()
 
-
 def preprocess():
     """Loads downloaded JSON data from OLIS 
        Returns data compatible with the models in ../models.py"""
