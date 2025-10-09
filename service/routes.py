@@ -69,4 +69,3 @@ def get_sessions(id: None):
     return jsonify({
         "response": [SessionScheme().dump(r) for r in response]
     })
-

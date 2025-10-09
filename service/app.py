@@ -1,7 +1,6 @@
 """ Flask app file """
 
 import os
-import sys
 import logging
 
 from flask import Flask
@@ -24,7 +23,7 @@ app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('SQLALCHEMY_DATABASE_URI', def
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['SQLALCHEMY_RECORD_QUERIES'] = True
 app.config['SQLALCHEMY_ECHO'] = "debug"
-app.config['FLASK_DEBUG'] = os.getenv('DEBUG', True)
+app.config['FLASK_DEBUG'] = os.getenv('DEBUG', 'True')
 app.logger.setLevel(logging.DEBUG)
 
 db.init_app(app)

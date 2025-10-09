@@ -77,7 +77,8 @@ class Politician(Base):
     id: Mapped[int] = mapped_column(Integer, primary_key=True)
     first_name: Mapped[str] = mapped_column(String(50))
     last_name: Mapped[str] = mapped_column(String(50))
-    legislators: Mapped[List["Legislator"]] = relationship(back_populates="politician", lazy="selectin")
+    legislators: Mapped[List["Legislator"]] = relationship(
+        back_populates="politician", lazy="selectin")
 
     def __repr__(self):
         return f'<{self.first_name} {self.last_name}>'
