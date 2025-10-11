@@ -78,7 +78,7 @@ class Politician(Base):
     first_name: Mapped[str] = mapped_column(String(50))
     last_name: Mapped[str] = mapped_column(String(50))
     legislators: Mapped[List["Legislator"]] = relationship(
-        back_populates="politician", lazy="selectin")
+        back_populates="politician")
 
     def __repr__(self):
         return f'<{self.first_name} {self.last_name}>'
@@ -102,7 +102,7 @@ class Session(Base):
     id: Mapped[int] = mapped_column(Integer, primary_key=True)
     name: Mapped[str] = mapped_column(Text)
     begin_date: Mapped[datetime] = mapped_column(DateTime)
-    end_date: Mapped[ datetime | None ] = DateTime
+    end_date: Mapped[ datetime | None ] = mapped_column(DateTime)
     committees: Mapped[List["Committee"]] = relationship(back_populates="session")
     legislators: Mapped[List["Legislator"]] = relationship(back_populates="session")
 

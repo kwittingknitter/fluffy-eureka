@@ -42,8 +42,6 @@ def get_politician(name):
         "response": [PoliticianScheme().dump(r) for r in response]
     })
 
-# TODO: fix issue with datetime in leg, sessions
-
 @app.route('/legislators', defaults={'id': None})
 @app.route('/legislators/<int:id>')
 def get_legislators(id: None):

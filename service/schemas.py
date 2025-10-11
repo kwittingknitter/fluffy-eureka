@@ -3,8 +3,6 @@
 from marshmallow import Schema, fields
 
 
-DATE_FORMAT = "%Y-%m-%dT%H:%M:%S"
-
 class LegislatorScheme(Schema):
     """Output schema for Legislator model"""
     id = fields.Integer()
@@ -12,8 +10,8 @@ class LegislatorScheme(Schema):
     leg_code = fields.String()
     district_number = fields.Integer()
     party = fields.String()
-    #begin_date = fields.DateTime(format=DATE_FORMAT, allow_none=True)
-    #end_date = fields.DateTime(format=DATE_FORMAT, allow_none=True)
+    begin_date = fields.Date()
+    end_date = fields.Date(allow_none=True)
     session_id = fields.Integer()
     politician_id = fields.Integer()
 
@@ -31,13 +29,14 @@ class PoliticianScheme(Schema):
     id = fields.Integer()
     first_name = fields.String()
     last_name = fields.String()
-    legislators = fields.Nested(LegislatorScheme, only=('id', 'leg_code'), many=True)
+    legislators = fields.Nested(
+        LegislatorScheme, only=('id', 'leg_code', 'title', 'begin_date'), many=True)
 
 class SessionScheme(Schema):
     """Output schema for Session model"""
     id = fields.Integer()
     name = fields.String()
-    # begin_date = fields.DateTime(format=DATE_FORMAT)
-    # end_date = fields.DateTime(format=DATE_FORMAT, allow_none=True)
+    begin_date = fields.Date()
+    end_date = fields.Date(allow_none=True)
     committees = fields.Nested(CommitteeScheme, only=('id', 'name'), many=True)
     legislators = fields.Nested(LegislatorScheme, only=('id', 'leg_code'), many=True)
