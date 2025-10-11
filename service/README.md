@@ -18,28 +18,40 @@ e.g. Output for `/politicians/bonamici`
     "last_name": "Bonamici",
     "legislators": [
         {
+            "begin_date": "2010-01-05",
             "id": ...,
-            "leg_code": "Sen Bonamici"
+            "leg_code": "Sen Bonamici",
+            "title": "Senator"
         },
         {
+            "begin_date": "2007-08-03",
             "id": ...,
-            "leg_code": "Rep Bonamici"
+            "leg_code": "Rep Bonamici",
+            "title": "Representative"
         },
         {
+            "begin_date": "2008-12-09",
             "id": ...,
-            "leg_code": "Sen Bonamici"
+            "leg_code": "Sen Bonamici",
+            "title": "Senator"
         },
         {
+            "begin_date": "2009-07-09",
             "id": ...,
-            "leg_code": "Sen Bonamici"
+            "leg_code": "Sen Bonamici",
+            "title": "Senator"
         },
         {
+            "begin_date": "2006-12-21",
             "id": ...,
-            "leg_code": "Rep Bonamici"
+            "leg_code": "Rep Bonamici",
+            "title": "Representative"
         },
         {
+            "begin_date": "2008-05-19",
             "id": ...,
-            "leg_code": "Sen Bonamici"
+            "leg_code": "Sen Bonamici",
+            "title": "Senator"
         }
     ]
 }

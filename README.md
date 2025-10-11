@@ -10,5 +10,5 @@ To set up, run `make install` in the Python environment of your choice
 - `/data` stores JSON file data 
 - `/scripts` contains notebooks that utilize the api wrapper to download data
 - `/tests` contains tests for the api wrapper
-- `/wrapper` contains the api wrapper and Open API specs for [the actual api](./wrapper/docs/spec.yaml)
+- `/wrapper` contains the api wrapper
 - `/service` Flask service based on data downloaded from OLIS
