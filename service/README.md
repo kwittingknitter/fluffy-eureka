@@ -6,7 +6,8 @@ To run the service:
 1. Go up a directory `cd ..`
 2. Set environment variable `export MYSQL_PASSWORD=...` 
 3. Running the Docker container: Ensure Docker is running. Then run `docker compose up --build` if running for the first time or `docker compose up -d`
-Running locally: You may need to set some more environment variables (e.g. `export DATA_PATH=/data/sessions.json`) before running `flask --app service run`
+Running locally: Set `DATA_PATH`, have mysql running, then run `flask --app service run`. 
+If you're running with this set up, use `/data/sessions.json` as `DATA_PATH`.
 
 ## Currently supported retrieval
 - Get politician by ID
