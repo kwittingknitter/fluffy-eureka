@@ -1,6 +1,4 @@
-'''
-Constants used in tests
-'''
+"""Constants used in tests"""
 
 GET_CURRENT_SESSION_ENDPOINT = 'https://api.oregonlegislature.gov/odata/odataservice.svc/LegislativeSessions?$filter=DefaultSession eq true &$expand=Legislators, Committees'
 GET_LEGISLATOR_ENDPOINT = "https://api.oregonlegislature.gov/odata/odataservice.svc/Legislators(SessionKey='{}', LegislatorCode='{}')"

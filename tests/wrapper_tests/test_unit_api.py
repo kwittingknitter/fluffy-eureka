@@ -10,8 +10,7 @@ from unittest.mock import MagicMock
 
 from wrapper import OlisAPI
 
-from tests import constants as test_constants
-
+from . import constants as test_constants
 
 class TestOlisAPIUnit(unittest.TestCase):
     """

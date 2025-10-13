@@ -4,10 +4,11 @@ Unit tests for wrapper.utils
 
 import unittest
 
+
 from wrapper.utils import Operation, get_endpoint
 from wrapper.errors import UnsupportedOperationError
 
-from tests.constants import GET_CURRENT_SESSION_ENDPOINT, GET_LEGISLATOR_ENDPOINT, \
+from .constants import GET_CURRENT_SESSION_ENDPOINT, GET_LEGISLATOR_ENDPOINT, \
     GET_LEGISLATOR_BILLS, GET_LEGISLATOR_CHIEF_BILLS, GET_LEGISLATOR_BILLS_ENROLLED
 
 
