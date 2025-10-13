@@ -2,10 +2,10 @@
 
 from __future__ import annotations
 
-from flask_sqlalchemy import SQLAlchemy
-
-from datetime import datetime
 from typing import List
+from datetime import datetime
+
+from flask_sqlalchemy import SQLAlchemy
 
 from sqlalchemy import Integer, String, DateTime, ForeignKey, Text
 from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column, relationship
