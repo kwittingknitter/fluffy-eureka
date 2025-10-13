@@ -1,3 +1,5 @@
+"""Initialize and export repositories"""
+
 from app import db
 
 from .legislators import LegislatorsRepository

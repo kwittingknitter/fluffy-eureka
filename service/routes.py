@@ -3,9 +3,9 @@
 from flask import jsonify
 
 from app import app
-from models import *
-from schemas import *
-from repository import politicians_repo, legislators_repo, sessions_repo, committees_repo
+from schemas import PoliticianScheme, LegislatorScheme, SessionScheme
+from repository import politicians_repo, legislators_repo, sessions_repo
+
 
 @app.route('/')
 def index():
@@ -13,7 +13,7 @@ def index():
     return "Pong!"
 
 @app.route('/politicians/<int:id>')
-def get_politician_by_id(id):
+def get_politician_by_id(id: int):
     """Get info about a politician who's served in the OR state legislature"""
     politicians = politicians_repo.get_by_id(id)
     response = PoliticianScheme().dump(politicians)
@@ -42,7 +42,7 @@ def get_legislator_by_id(id: int):
     """Get info about one legislator by id"""
     legislator = legislators_repo.get_by_id(id)
     return LegislatorScheme().dump(legislator)
-    
+
 @app.route('/legislators')
 def get_legislators():
     """Get all OR state legislators"""
