@@ -1,28 +1,13 @@
-'''Scripts for Flask app'''
+"""Utils functions for app"""
 
 import os
 import json
 
 from datetime import datetime
-from flask_sqlalchemy import SQLAlchemy
-from sqlalchemy import insert, inspect
 
-from errors import NoSeedDataError
-from models import Legislator, Politician, Session, Committee
+from .errors import NoSeedDataError
+from .models import Legislator, Politician, Session, Committee
 
-
-def insert_seed_data(db: SQLAlchemy):
-    """Inserts seed data into the database, db"""
-    inspector = inspect(db.engine)
-    if inspector.get_table_names():
-        pass
-
-    politicians, sessions, legislators, committees = preprocess()
-    db.session.add_all(politicians)
-    db.session.add_all(sessions)
-    db.session.add_all(legislators)
-    db.session.add_all(committees)
-    db.session.commit()
 
 def preprocess():
     """Loads downloaded JSON data from OLIS 

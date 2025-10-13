@@ -1,6 +1,6 @@
 """Initialize and export repositories"""
 
-from app import db
+from service.models import db
 
 from .legislators import LegislatorsRepository
 from .politicians import PoliticiansRepository

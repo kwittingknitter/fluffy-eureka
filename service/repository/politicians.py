@@ -2,7 +2,7 @@
 
 from flask_sqlalchemy import SQLAlchemy
 
-from models import Politician
+from service.models import Politician
 
 
 class PoliticiansRepository:

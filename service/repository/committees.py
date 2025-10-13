@@ -2,7 +2,7 @@
 
 from flask_sqlalchemy import SQLAlchemy
 
-from models import Committee
+from service.models import Committee
 
 
 class CommitteesRepository:

@@ -2,6 +2,8 @@
 
 from __future__ import annotations
 
+from flask_sqlalchemy import SQLAlchemy
+
 from datetime import datetime
 from typing import List
 
@@ -119,3 +121,6 @@ class Session(Base):
         if not isinstance(other, Session):
             return NotImplemented
         return self.name == other.name
+
+
+db = SQLAlchemy(model_class=Base)

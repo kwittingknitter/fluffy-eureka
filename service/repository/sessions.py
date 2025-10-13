@@ -2,7 +2,7 @@
 
 from flask_sqlalchemy import SQLAlchemy
 
-from models import Session
+from service.models import Session
 
 
 class SessionsRepository:
