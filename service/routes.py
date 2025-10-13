@@ -2,68 +2,65 @@
 
 from flask import jsonify
 
-from app import app, db
+from app import app
 from models import *
 from schemas import *
-
+from repository import politicians_repo, legislators_repo, sessions_repo, committees_repo
 
 @app.route('/')
 def index():
     """Pong back"""
     return "Pong!"
 
-@app.route('/politicians', defaults={'id': None})
 @app.route('/politicians/<int:id>')
-def get_politicians(id: None):
-    """Get info about one or all people who've served in the OR state legislature"""
-    response = None
-    if id:
-        response = db.get_or_404(Politician, id)
-        resp_dict = PoliticianScheme().dump(response)
-        return resp_dict
-    response = db.session.execute(db.select(Politician)).scalars().all()
+def get_politician_by_id(id):
+    """Get info about a politician who's served in the OR state legislature"""
+    politicians = politicians_repo.get_by_id(id)
+    response = PoliticianScheme().dump(politicians)
+    return response
+
+@app.route('/politicians')
+def get_all_politicians():
+    """Get info about all politicians who've served in the OR state legislature"""
+    politicians = politicians_repo.get_all()
     return jsonify({
-        "response": [PoliticianScheme().dump(r) for r in response]
+        "response": [PoliticianScheme().dump(politician) for politician in politicians]
     })
 
 @app.route('/politicians/<string:name>')
 def get_politician(name):
     """Search for politician by name"""
-    response = db.session.execute(
-        db.select(Politician).where(
-            (Politician.first_name.like(name)) | (Politician.last_name.like(name))
-        )).scalars().all()
-    if len(response) > 0 and len(response) == 1:
-        resp_dict = PoliticianScheme().dump(response[0])
-        return resp_dict
-    elif len(response) == 0:
+    politicians = politicians_repo.search_by_name(name)
+    if len(politicians) == 0:
         return jsonify({"response": []})
     return jsonify({
-        "response": [PoliticianScheme().dump(r) for r in response]
+        "response": [PoliticianScheme().dump(politician) for politician in politicians]
     })
 
-@app.route('/legislators', defaults={'id': None})
 @app.route('/legislators/<int:id>')
-def get_legislators(id: None):
-    """Get info about one legislator by id or all legislators"""
-    response = None
-    if id:
-        response = db.get_or_404(Legislator, id)
-        return LegislatorScheme().dump(response)
-    response = db.session.execute(db.select(Legislator)).scalars().all()
+def get_legislator_by_id(id: int):
+    """Get info about one legislator by id"""
+    legislator = legislators_repo.get_by_id(id)
+    return LegislatorScheme().dump(legislator)
+    
+@app.route('/legislators')
+def get_legislators():
+    """Get all OR state legislators"""
+    legislators = legislators_repo.get_all()
     return jsonify({
-        "response": [LegislatorScheme().dump(r) for r in response]
+        "response": [LegislatorScheme().dump(legislator) for legislator in legislators]
     })
 
-@app.route('/sessions', defaults={'id': None})
 @app.route('/sessions/<int:id>')
-def get_sessions(id: None):
-    """Get info about one session by id or all sessions"""
-    response = None
-    if id:
-        response = db.get_or_404(Session, id)
-        return SessionScheme().dump(response)
-    response = db.session.execute(db.select(Session)).scalars().all()
+def get_session_by_id(id: int):
+    """Get session by ID"""
+    session = sessions_repo.get_by_id(id)
+    return SessionScheme().dump(session)
+
+@app.route('/sessions')
+def get_sessions():
+    """Get all sessions"""
+    sessions = sessions_repo.get_all()
     return jsonify({
-        "response": [SessionScheme().dump(r) for r in response]
+        "response": [SessionScheme().dump(session) for session in sessions]
     })
