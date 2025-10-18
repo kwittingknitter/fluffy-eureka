@@ -7,3 +7,4 @@ Flask-SQLAlchemy
 pymysql
 cryptography
 marshmallow
+beautifulsoup4

@@ -24,6 +24,7 @@ class Legislator(Base):
     title: Mapped[ str | None ] = mapped_column(String(50))
     leg_code: Mapped[str] = mapped_column(String(50))
     district_number: Mapped[int] = mapped_column(Integer)
+    state: Mapped[str] = mapped_column(String(15))
     party: Mapped[str] = mapped_column(String(50))
     begin_date: Mapped[datetime] = mapped_column(DateTime)
     end_date: Mapped[ datetime | None ] = mapped_column(DateTime, nullable=True)
