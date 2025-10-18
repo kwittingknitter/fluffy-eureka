@@ -25,8 +25,20 @@ class CAStateSenateScraper(BaseScraper):
 
         Returns list of dict with info about each senator.
         """
-        pass
-        # response = self.session.get(self.BASE_URL+self.SENATORS_ENDPOINT)
+        response = self.session.get(self.BASE_URL+self.SENATORS_ENDPOINT)
+        soup = BeautifulSoup(response.content, "html.parser")
+        members_data = soup.find_all(class_="page-members__member")
+        members = []
+        for member_info in members_data:
+            info = [c for c in member_info.contents]
+            name_and_party = re.split(r'\W+', info[0].next_sibling.text)
+            members.append({
+                "first_name": name_and_party[0],
+                "last_name": name_and_party[1],
+                "district_number": int(re.search(r"\d+", info[2].text).group()),
+                "party": "Democrat" if "D" in name_and_party[2] else "Republican",
+            })
+        return members
 
     def get_committees(self):
         """
@@ -64,11 +76,11 @@ class CAStateAssemblyScraper(BaseScraper):
         members = []
         for member_info in members_data:
             info = [c.text for c in member_info]
-            name = info[0].split()
+            name = re.split(r'\W+', info[0])
             members.append({
                 "last_name": name[0],
                 "first_name": name[1],
-                "district_number": re.search(r"\d+", info[1]).group(),
+                "district_number": int(re.search(r"\d+", info[1]).group()),
                 "party": info[2]
             })
         return members

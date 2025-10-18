@@ -1,9 +1,7 @@
 ## About
-Downloads data about state politicians in CA and OR.
+This rep contains an API wrapper and scraper for downloading data about state politicians. So far there is a scraper that downloads CA (via scraper) and OR (via wrapper) data.
 
-Requirements: Python
-
-To set up, run `make install` in the Python environment of your choice.
+It also contains a barebones service that loads the OR data into a MySQL database and makes it queryable.
 
 ### Project setup
 
@@ -13,3 +11,8 @@ To set up, run `make install` in the Python environment of your choice.
 - `/service` Flask service based on data downloaded from OLIS and using scrapers.
 - `/tests` contains tests for `wrapper`, `service`, and `scrapers`.
 - `/wrapper` contains the OLIS api wrapper.
+
+
+Requirements: Python
+
+To set up, run `make install` in the Python environment of your choice.
