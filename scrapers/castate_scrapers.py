@@ -25,7 +25,7 @@ class CAStateSenateScraper(BaseScraper):
 
         Returns list of dict with info about each senator.
         """
-        response = self.session.get(self.BASE_URL+self.SENATORS_ENDPOINT)
+        response = self.session.get(self.BASE_URL+self.SENATORS_ENDPOINT, headers=self.HEADERS)
         soup = BeautifulSoup(response.content, "html.parser")
         members_data = soup.find_all(class_="page-members__member")
         members = []
@@ -42,12 +42,24 @@ class CAStateSenateScraper(BaseScraper):
 
     def get_committees(self):
         """
-        Gets senate committees.
+        Gets senate committees (standing) and joint committees.
 
         Returns list.
         """
-        pass
-        # response = self.session.get(self.BASE_URL+self.COMMITTEES_ENDPOINT)
+        committees = []
+        response = self.session.get(self.BASE_URL+self.COMMITTEES_ENDPOINT, headers=self.HEADERS)
+        soup = BeautifulSoup(response.content, "html.parser")
+        comm_types = ["standing-committees", "joint-committees"]
+        for comm_type in comm_types:
+            comms_div = soup.find_all(id=comm_type)[0]
+            committee_list = comms_div.find_all('li')
+            for committee in committee_list:
+                committee = {
+                    "name": committee.text.strip(),
+                    "committee_type": "Senate Committee On" if 'joint' not in comm_type else 'Joint Committee On',
+                }
+                committees.append(committee)
+        return committees
 
 
 class CAStateAssemblyScraper(BaseScraper):
@@ -70,7 +82,7 @@ class CAStateAssemblyScraper(BaseScraper):
 
         Returns a list of dict with info about each member.
         """
-        response = self.session.get(self.BASE_URL+self.ASSEMBLYMEMBERS_ENDPOINT)
+        response = self.session.get(self.BASE_URL+self.ASSEMBLYMEMBERS_ENDPOINT, headers=self.HEADERS)
         soup = BeautifulSoup(response.content, "html.parser")
         members_data = soup.find_all(class_="members-list__content")
         members = []
@@ -92,8 +104,9 @@ class CAStateAssemblyScraper(BaseScraper):
 
         Returns a list of assembly committees.
         """
-        pass
+        # TODO may need selenium 
         # response = self.session.get(self.BASE_URL+self.COMMITTEES_ENDPOINT)
+        pass
 
 
 class CALegInfoScraper(BaseScraper):

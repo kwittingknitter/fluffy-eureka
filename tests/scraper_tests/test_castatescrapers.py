@@ -40,3 +40,15 @@ class TestCASenateScraper(unittest.TestCase):
             self.assertIn("party", senator)
             self.assertIn("district_number", senator)
             self.assertIsInstance(senator["district_number"], int)
+
+    def test_get_senate_comms(self):
+        """
+        Checks list of CA senate committees
+        """
+        committees = ca_senate_scraper.get_committees()
+
+        self.assertIsInstance(committees, list)
+        self.assertGreater(len(committees), 0)
+        for comm in committees:
+            self.assertIn("name", comm)
+            self.assertIn("committee_type", comm)
