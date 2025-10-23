@@ -1,5 +1,5 @@
 '''Tests for CA state scrapers'''
-import unittest, re
+import unittest
 
 from scrapers import ca_senate_scraper, ca_assembly_scraper
 

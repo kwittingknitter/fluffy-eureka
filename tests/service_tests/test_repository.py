@@ -8,7 +8,8 @@ import unittest
 from unittest.mock import MagicMock
 
 from service.models import Committee, Legislator, Politician, Session
-from service.repository import CommitteesRepository, LegislatorsRepository, PoliticiansRepository, SessionsRepository
+from service.repository import CommitteesRepository, LegislatorsRepository,\
+    PoliticiansRepository, SessionsRepository
 
 
 class TestRepository(unittest.TestCase):
