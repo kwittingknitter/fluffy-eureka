@@ -134,721 +134,961 @@
                 "first_name": "Benjamin",
                 "last_name": "Allen",
                 "district_number": 24,
-                "party": "Democrat"
+                "party": "Democrat",
+                "state": "CA",
+                "title": "Senator"
             },
             {
                 "first_name": "Marie",
                 "last_name": "Alvarado",
                 "district_number": 4,
-                "party": "Republican"
+                "party": "Republican",
+                "state": "CA",
+                "title": "Senator"
             },
             {
                 "first_name": "Bob",
                 "last_name": "Archuleta",
                 "district_number": 30,
-                "party": "Democrat"
+                "party": "Democrat",
+                "state": "CA",
+                "title": "Senator"
             },
             {
                 "first_name": "Jesse",
                 "last_name": "Arregu\u00edn",
                 "district_number": 7,
-                "party": "Democrat"
+                "party": "Democrat",
+                "state": "CA",
+                "title": "Senator"
             },
             {
                 "first_name": "Angelique",
                 "last_name": "Ashby",
                 "district_number": 8,
-                "party": "Democrat"
+                "party": "Democrat",
+                "state": "CA",
+                "title": "Senator"
             },
             {
                 "first_name": "Josh",
                 "last_name": "Becker",
                 "district_number": 13,
-                "party": "Democrat"
+                "party": "Democrat",
+                "state": "CA",
+                "title": "Senator"
             },
             {
                 "first_name": "Catherine",
                 "last_name": "S",
                 "district_number": 38,
-                "party": "Republican"
+                "party": "Republican",
+                "state": "CA",
+                "title": "Senator"
             },
             {
                 "first_name": "Christopher",
                 "last_name": "Cabaldon",
                 "district_number": 3,
-                "party": "Democrat"
+                "party": "Democrat",
+                "state": "CA",
+                "title": "Senator"
             },
             {
                 "first_name": "Anna",
                 "last_name": "Caballero",
                 "district_number": 14,
-                "party": "Democrat"
+                "party": "Democrat",
+                "state": "CA",
+                "title": "Senator"
             },
             {
                 "first_name": "Sabrina",
                 "last_name": "Cervantes",
                 "district_number": 31,
-                "party": "Democrat"
+                "party": "Democrat",
+                "state": "CA",
+                "title": "Senator"
             },
             {
                 "first_name": "Steven",
                 "last_name": "Steve",
                 "district_number": 37,
-                "party": "Republican"
+                "party": "Republican",
+                "state": "CA",
+                "title": "Senator"
             },
             {
                 "first_name": "Dave",
                 "last_name": "Cortese",
                 "district_number": 15,
-                "party": "Democrat"
+                "party": "Democrat",
+                "state": "CA",
+                "title": "Senator"
             },
             {
                 "first_name": "Megan",
                 "last_name": "Dahle",
                 "district_number": 1,
-                "party": "Republican"
+                "party": "Republican",
+                "state": "CA",
+                "title": "Senator"
             },
             {
                 "first_name": "Maria",
                 "last_name": "Elena",
                 "district_number": 26,
-                "party": "Democrat"
+                "party": "Democrat",
+                "state": "CA",
+                "title": "Senator"
             },
             {
                 "first_name": "Lena",
                 "last_name": "Gonzalez",
                 "district_number": 33,
-                "party": "Democrat"
+                "party": "Democrat",
+                "state": "CA",
+                "title": "Senator"
             },
             {
                 "first_name": "Tim",
                 "last_name": "Grayson",
                 "district_number": 9,
-                "party": "Democrat"
+                "party": "Democrat",
+                "state": "CA",
+                "title": "Senator"
             },
             {
                 "first_name": "Shannon",
                 "last_name": "Grove",
                 "district_number": 12,
-                "party": "Republican"
+                "party": "Republican",
+                "state": "CA",
+                "title": "Senator"
             },
             {
                 "first_name": "Melissa",
                 "last_name": "Hurtado",
                 "district_number": 16,
-                "party": "Democrat"
+                "party": "Democrat",
+                "state": "CA",
+                "title": "Senator"
             },
             {
                 "first_name": "Brian",
                 "last_name": "W",
                 "district_number": 40,
-                "party": "Republican"
+                "party": "Republican",
+                "state": "CA",
+                "title": "Senator"
             },
             {
                 "first_name": "John",
                 "last_name": "Laird",
                 "district_number": 17,
-                "party": "Democrat"
+                "party": "Democrat",
+                "state": "CA",
+                "title": "Senator"
             },
             {
                 "first_name": "Monique",
                 "last_name": "Lim\u00f3n",
                 "district_number": 21,
-                "party": "Democrat"
+                "party": "Democrat",
+                "state": "CA",
+                "title": "Senator"
             },
             {
                 "first_name": "Mike",
                 "last_name": "McGuire",
                 "district_number": 2,
-                "party": "Democrat"
+                "party": "Democrat",
+                "state": "CA",
+                "title": "Senator"
             },
             {
                 "first_name": "Jerry",
                 "last_name": "McNerney",
                 "district_number": 5,
-                "party": "Democrat"
+                "party": "Democrat",
+                "state": "CA",
+                "title": "Senator"
             },
             {
                 "first_name": "Caroline",
                 "last_name": "Menjivar",
                 "district_number": 20,
-                "party": "Democrat"
+                "party": "Democrat",
+                "state": "CA",
+                "title": "Senator"
             },
             {
                 "first_name": "Roger",
                 "last_name": "Niello",
                 "district_number": 6,
-                "party": "Republican"
+                "party": "Republican",
+                "state": "CA",
+                "title": "Senator"
             },
             {
                 "first_name": "Rosilicie",
                 "last_name": "Ochoa",
                 "district_number": 19,
-                "party": "Republican"
+                "party": "Republican",
+                "state": "CA",
+                "title": "Senator"
             },
             {
                 "first_name": "Steve",
                 "last_name": "Padilla",
                 "district_number": 18,
-                "party": "Democrat"
+                "party": "Democrat",
+                "state": "CA",
+                "title": "Senator"
             },
             {
                 "first_name": "Sasha",
                 "last_name": "Ren\u00e9e",
                 "district_number": 25,
-                "party": "Republican"
+                "party": "Republican",
+                "state": "CA",
+                "title": "Senator"
             },
             {
                 "first_name": "Eloise",
                 "last_name": "G\u00f3mez",
                 "district_number": 29,
-                "party": "Republican"
+                "party": "Republican",
+                "state": "CA",
+                "title": "Senator"
             },
             {
                 "first_name": "Laura",
                 "last_name": "Richardson",
                 "district_number": 35,
-                "party": "Democrat"
+                "party": "Democrat",
+                "state": "CA",
+                "title": "Senator"
             },
             {
                 "first_name": "Susan",
                 "last_name": "Rubio",
                 "district_number": 22,
-                "party": "Democrat"
+                "party": "Democrat",
+                "state": "CA",
+                "title": "Senator"
             },
             {
                 "first_name": "Kelly",
                 "last_name": "Seyarto",
                 "district_number": 32,
-                "party": "Republican"
+                "party": "Republican",
+                "state": "CA",
+                "title": "Senator"
             },
             {
                 "first_name": "Lola",
                 "last_name": "Smallwood",
                 "district_number": 28,
-                "party": "Republican"
+                "party": "Republican",
+                "state": "CA",
+                "title": "Senator"
             },
             {
                 "first_name": "Henry",
                 "last_name": "Stern",
                 "district_number": 27,
-                "party": "Democrat"
+                "party": "Democrat",
+                "state": "CA",
+                "title": "Senator"
             },
             {
                 "first_name": "Tony",
                 "last_name": "Strickland",
                 "district_number": 36,
-                "party": "Republican"
+                "party": "Republican",
+                "state": "CA",
+                "title": "Senator"
             },
             {
                 "first_name": "Thomas",
                 "last_name": "Umberg",
                 "district_number": 34,
-                "party": "Democrat"
+                "party": "Democrat",
+                "state": "CA",
+                "title": "Senator"
             },
             {
                 "first_name": "Suzette",
                 "last_name": "Martinez",
                 "district_number": 23,
-                "party": "Republican"
+                "party": "Republican",
+                "state": "CA",
+                "title": "Senator"
             },
             {
                 "first_name": "Aisha",
                 "last_name": "Wahab",
                 "district_number": 10,
-                "party": "Democrat"
+                "party": "Democrat",
+                "state": "CA",
+                "title": "Senator"
             },
             {
                 "first_name": "Akilah",
                 "last_name": "Weber",
                 "district_number": 39,
-                "party": "Republican"
+                "party": "Republican",
+                "state": "CA",
+                "title": "Senator"
             },
             {
                 "first_name": "Scott",
                 "last_name": "Wiener",
                 "district_number": 11,
-                "party": "Democrat"
+                "party": "Democrat",
+                "state": "CA",
+                "title": "Senator"
             },
             {
                 "last_name": "Addis",
                 "first_name": "Dawn",
                 "district_number": 30,
-                "party": "Democrat"
+                "party": "Democrat",
+                "state": "CA",
+                "title": "Assembly Member"
             },
             {
                 "last_name": "Aguiar",
                 "first_name": "Curry",
                 "district_number": 4,
-                "party": "Democrat"
+                "party": "Democrat",
+                "state": "CA",
+                "title": "Assembly Member"
             },
             {
                 "last_name": "Ahrens",
                 "first_name": "Patrick",
                 "district_number": 26,
-                "party": "Democrat"
+                "party": "Democrat",
+                "state": "CA",
+                "title": "Assembly Member"
             },
             {
                 "last_name": "Alanis",
                 "first_name": "Juan",
                 "district_number": 22,
-                "party": "Republican"
+                "party": "Republican",
+                "state": "CA",
+                "title": "Assembly Member"
             },
             {
                 "last_name": "Alvarez",
                 "first_name": "David",
                 "district_number": 80,
-                "party": "Democrat"
+                "party": "Democrat",
+                "state": "CA",
+                "title": "Assembly Member"
             },
             {
                 "last_name": "Arambula",
                 "first_name": "Dr",
                 "district_number": 31,
-                "party": "Democrat"
+                "party": "Democrat",
+                "state": "CA",
+                "title": "Assembly Member"
             },
             {
                 "last_name": "\u00c1vila",
                 "first_name": "Far\u00edas",
                 "district_number": 15,
-                "party": "Democrat"
+                "party": "Democrat",
+                "state": "CA",
+                "title": "Assembly Member"
             },
             {
                 "last_name": "Bains",
                 "first_name": "Jasmeet",
                 "district_number": 35,
-                "party": "Democrat"
+                "party": "Democrat",
+                "state": "CA",
+                "title": "Assembly Member"
             },
             {
                 "last_name": "Bauer",
                 "first_name": "Kahan",
                 "district_number": 16,
-                "party": "Democrat"
+                "party": "Democrat",
+                "state": "CA",
+                "title": "Assembly Member"
             },
             {
                 "last_name": "Bennett",
                 "first_name": "Steve",
                 "district_number": 38,
-                "party": "Democrat"
+                "party": "Democrat",
+                "state": "CA",
+                "title": "Assembly Member"
             },
             {
                 "last_name": "Berman",
                 "first_name": "Marc",
                 "district_number": 23,
-                "party": "Democrat"
+                "party": "Democrat",
+                "state": "CA",
+                "title": "Assembly Member"
             },
             {
                 "last_name": "Boerner",
                 "first_name": "Tasha",
                 "district_number": 77,
-                "party": "Democrat"
+                "party": "Democrat",
+                "state": "CA",
+                "title": "Assembly Member"
             },
             {
                 "last_name": "Bonta",
                 "first_name": "Mia",
                 "district_number": 18,
-                "party": "Democrat"
+                "party": "Democrat",
+                "state": "CA",
+                "title": "Assembly Member"
             },
             {
                 "last_name": "Bryan",
                 "first_name": "Isaac",
                 "district_number": 55,
-                "party": "Democrat"
+                "party": "Democrat",
+                "state": "CA",
+                "title": "Assembly Member"
             },
             {
                 "last_name": "Calderon",
                 "first_name": "Lisa",
                 "district_number": 56,
-                "party": "Democrat"
+                "party": "Democrat",
+                "state": "CA",
+                "title": "Assembly Member"
             },
             {
                 "last_name": "Caloza",
                 "first_name": "Jessica",
                 "district_number": 52,
-                "party": "Democrat"
+                "party": "Democrat",
+                "state": "CA",
+                "title": "Assembly Member"
             },
             {
                 "last_name": "Carrillo",
                 "first_name": "Juan",
                 "district_number": 39,
-                "party": "Democrat"
+                "party": "Democrat",
+                "state": "CA",
+                "title": "Assembly Member"
             },
             {
                 "last_name": "Castillo",
                 "first_name": "Leticia",
                 "district_number": 58,
-                "party": "Republican"
+                "party": "Republican",
+                "state": "CA",
+                "title": "Assembly Member"
             },
             {
                 "last_name": "Chen",
                 "first_name": "Phillip",
                 "district_number": 59,
-                "party": "Republican"
+                "party": "Republican",
+                "state": "CA",
+                "title": "Assembly Member"
             },
             {
                 "last_name": "Connolly",
                 "first_name": "Damon",
                 "district_number": 12,
-                "party": "Democrat"
+                "party": "Democrat",
+                "state": "CA",
+                "title": "Assembly Member"
             },
             {
                 "last_name": "Davies",
                 "first_name": "Laurie",
                 "district_number": 74,
-                "party": "Republican"
+                "party": "Republican",
+                "state": "CA",
+                "title": "Assembly Member"
             },
             {
                 "last_name": "DeMaio",
                 "first_name": "Carl",
                 "district_number": 75,
-                "party": "Republican"
+                "party": "Republican",
+                "state": "CA",
+                "title": "Assembly Member"
             },
             {
                 "last_name": "Dixon",
                 "first_name": "Diane",
                 "district_number": 72,
-                "party": "Republican"
+                "party": "Republican",
+                "state": "CA",
+                "title": "Assembly Member"
             },
             {
                 "last_name": "Elhawary",
                 "first_name": "Sade",
                 "district_number": 57,
-                "party": "Democrat"
+                "party": "Democrat",
+                "state": "CA",
+                "title": "Assembly Member"
             },
             {
                 "last_name": "Ellis",
                 "first_name": "Stan",
                 "district_number": 32,
-                "party": "Republican"
+                "party": "Republican",
+                "state": "CA",
+                "title": "Assembly Member"
             },
             {
                 "last_name": "Flora",
                 "first_name": "Heath",
                 "district_number": 9,
-                "party": "Republican"
+                "party": "Republican",
+                "state": "CA",
+                "title": "Assembly Member"
             },
             {
                 "last_name": "Fong",
                 "first_name": "Mike",
                 "district_number": 49,
-                "party": "Democrat"
+                "party": "Democrat",
+                "state": "CA",
+                "title": "Assembly Member"
             },
             {
                 "last_name": "Gabriel",
                 "first_name": "Jesse",
                 "district_number": 46,
-                "party": "Democrat"
+                "party": "Democrat",
+                "state": "CA",
+                "title": "Assembly Member"
             },
             {
                 "last_name": "Gallagher",
                 "first_name": "James",
                 "district_number": 3,
-                "party": "Republican"
+                "party": "Republican",
+                "state": "CA",
+                "title": "Assembly Member"
             },
             {
                 "last_name": "Garcia",
                 "first_name": "Robert",
                 "district_number": 50,
-                "party": "Democrat"
+                "party": "Democrat",
+                "state": "CA",
+                "title": "Assembly Member"
             },
             {
                 "last_name": "Gipson",
                 "first_name": "Mike",
                 "district_number": 65,
-                "party": "Democrat"
+                "party": "Democrat",
+                "state": "CA",
+                "title": "Assembly Member"
             },
             {
                 "last_name": "Gonz\u00e1lez",
                 "first_name": "Mark",
                 "district_number": 54,
-                "party": "Democrat"
+                "party": "Democrat",
+                "state": "CA",
+                "title": "Assembly Member"
             },
             {
                 "last_name": "Gonzalez",
                 "first_name": "Jeff",
                 "district_number": 36,
-                "party": "Republican"
+                "party": "Republican",
+                "state": "CA",
+                "title": "Assembly Member"
             },
             {
                 "last_name": "Hadwick",
                 "first_name": "Heather",
                 "district_number": 1,
-                "party": "Republican"
+                "party": "Republican",
+                "state": "CA",
+                "title": "Assembly Member"
             },
             {
                 "last_name": "Haney",
                 "first_name": "Matt",
                 "district_number": 17,
-                "party": "Democrat"
+                "party": "Democrat",
+                "state": "CA",
+                "title": "Assembly Member"
             },
             {
                 "last_name": "Harabedian",
                 "first_name": "John",
                 "district_number": 41,
-                "party": "Democrat"
+                "party": "Democrat",
+                "state": "CA",
+                "title": "Assembly Member"
             },
             {
                 "last_name": "Hart",
                 "first_name": "Gregg",
                 "district_number": 37,
-                "party": "Democrat"
+                "party": "Democrat",
+                "state": "CA",
+                "title": "Assembly Member"
             },
             {
                 "last_name": "Hoover",
                 "first_name": "Josh",
                 "district_number": 7,
-                "party": "Republican"
+                "party": "Republican",
+                "state": "CA",
+                "title": "Assembly Member"
             },
             {
                 "last_name": "Irwin",
                 "first_name": "Jacqui",
                 "district_number": 42,
-                "party": "Democrat"
+                "party": "Democrat",
+                "state": "CA",
+                "title": "Assembly Member"
             },
             {
                 "last_name": "Jackson",
                 "first_name": "Dr",
                 "district_number": 60,
-                "party": "Democrat"
+                "party": "Democrat",
+                "state": "CA",
+                "title": "Assembly Member"
             },
             {
                 "last_name": "Johnson",
                 "first_name": "Natasha",
                 "district_number": 63,
-                "party": "Republican"
+                "party": "Republican",
+                "state": "CA",
+                "title": "Assembly Member"
             },
             {
                 "last_name": "Kalra",
                 "first_name": "Ash",
                 "district_number": 25,
-                "party": "Democrat"
+                "party": "Democrat",
+                "state": "CA",
+                "title": "Assembly Member"
             },
             {
                 "last_name": "Krell",
                 "first_name": "Maggy",
                 "district_number": 6,
-                "party": "Democrat"
+                "party": "Democrat",
+                "state": "CA",
+                "title": "Assembly Member"
             },
             {
                 "last_name": "Lackey",
                 "first_name": "Tom",
                 "district_number": 34,
-                "party": "Republican"
+                "party": "Republican",
+                "state": "CA",
+                "title": "Assembly Member"
             },
             {
                 "last_name": "Lee",
                 "first_name": "Alex",
                 "district_number": 24,
-                "party": "Democrat"
+                "party": "Democrat",
+                "state": "CA",
+                "title": "Assembly Member"
             },
             {
                 "last_name": "Lowenthal",
                 "first_name": "Josh",
                 "district_number": 69,
-                "party": "Democrat"
+                "party": "Democrat",
+                "state": "CA",
+                "title": "Assembly Member"
             },
             {
                 "last_name": "Macedo",
                 "first_name": "Alexandra",
                 "district_number": 33,
-                "party": "Republican"
+                "party": "Republican",
+                "state": "CA",
+                "title": "Assembly Member"
             },
             {
                 "last_name": "McKinnor",
                 "first_name": "Tina",
                 "district_number": 61,
-                "party": "Democrat"
+                "party": "Democrat",
+                "state": "CA",
+                "title": "Assembly Member"
             },
             {
                 "last_name": "Muratsuchi",
                 "first_name": "Al",
                 "district_number": 66,
-                "party": "Democrat"
+                "party": "Democrat",
+                "state": "CA",
+                "title": "Assembly Member"
             },
             {
                 "last_name": "Nguyen",
                 "first_name": "Stephanie",
                 "district_number": 10,
-                "party": "Democrat"
+                "party": "Democrat",
+                "state": "CA",
+                "title": "Assembly Member"
             },
             {
                 "last_name": "Ortega",
                 "first_name": "Liz",
                 "district_number": 20,
-                "party": "Democrat"
+                "party": "Democrat",
+                "state": "CA",
+                "title": "Assembly Member"
             },
             {
                 "last_name": "Pacheco",
                 "first_name": "Blanca",
                 "district_number": 64,
-                "party": "Democrat"
+                "party": "Democrat",
+                "state": "CA",
+                "title": "Assembly Member"
             },
             {
                 "last_name": "Papan",
                 "first_name": "Diane",
                 "district_number": 21,
-                "party": "Democrat"
+                "party": "Democrat",
+                "state": "CA",
+                "title": "Assembly Member"
             },
             {
                 "last_name": "Patel",
                 "first_name": "Dr",
                 "district_number": 76,
-                "party": "Democrat"
+                "party": "Democrat",
+                "state": "CA",
+                "title": "Assembly Member"
             },
             {
                 "last_name": "Patterson",
                 "first_name": "Joe",
                 "district_number": 5,
-                "party": "Republican"
+                "party": "Republican",
+                "state": "CA",
+                "title": "Assembly Member"
             },
             {
                 "last_name": "Pellerin",
                 "first_name": "Gail",
                 "district_number": 28,
-                "party": "Democrat"
+                "party": "Democrat",
+                "state": "CA",
+                "title": "Assembly Member"
             },
             {
                 "last_name": "Petrie",
                 "first_name": "Norris",
                 "district_number": 73,
-                "party": "Democrat"
+                "party": "Democrat",
+                "state": "CA",
+                "title": "Assembly Member"
             },
             {
                 "last_name": "Quirk",
                 "first_name": "Silva",
                 "district_number": 67,
-                "party": "Democrat"
+                "party": "Democrat",
+                "state": "CA",
+                "title": "Assembly Member"
             },
             {
                 "last_name": "Ramos",
                 "first_name": "James",
                 "district_number": 45,
-                "party": "Democrat"
+                "party": "Democrat",
+                "state": "CA",
+                "title": "Assembly Member"
             },
             {
                 "last_name": "Ransom",
                 "first_name": "Rhodesia",
                 "district_number": 13,
-                "party": "Democrat"
+                "party": "Democrat",
+                "state": "CA",
+                "title": "Assembly Member"
             },
             {
                 "last_name": "Rivas",
                 "first_name": "Robert",
                 "district_number": 29,
-                "party": "Democrat"
+                "party": "Democrat",
+                "state": "CA",
+                "title": "Assembly Member"
             },
             {
                 "last_name": "Rodriguez",
                 "first_name": "Michelle",
                 "district_number": 53,
-                "party": "Democrat"
+                "party": "Democrat",
+                "state": "CA",
+                "title": "Assembly Member"
             },
             {
                 "last_name": "Rodriguez",
                 "first_name": "Celeste",
                 "district_number": 43,
-                "party": "Democrat"
+                "party": "Democrat",
+                "state": "CA",
+                "title": "Assembly Member"
             },
             {
                 "last_name": "Rogers",
                 "first_name": "Chris",
                 "district_number": 2,
-                "party": "Democrat"
+                "party": "Democrat",
+                "state": "CA",
+                "title": "Assembly Member"
             },
             {
                 "last_name": "Rubio",
                 "first_name": "Blanca",
                 "district_number": 48,
-                "party": "Democrat"
+                "party": "Democrat",
+                "state": "CA",
+                "title": "Assembly Member"
             },
             {
                 "last_name": "Sanchez",
                 "first_name": "Kate",
                 "district_number": 71,
-                "party": "Republican"
+                "party": "Republican",
+                "state": "CA",
+                "title": "Assembly Member"
             },
             {
                 "last_name": "Schiavo",
                 "first_name": "Pilar",
                 "district_number": 40,
-                "party": "Democrat"
+                "party": "Democrat",
+                "state": "CA",
+                "title": "Assembly Member"
             },
             {
                 "last_name": "Schultz",
                 "first_name": "Nick",
                 "district_number": 44,
-                "party": "Democrat"
+                "party": "Democrat",
+                "state": "CA",
+                "title": "Assembly Member"
             },
             {
                 "last_name": "Sharp",
                 "first_name": "Collins",
                 "district_number": 79,
-                "party": "Democrat"
+                "party": "Democrat",
+                "state": "CA",
+                "title": "Assembly Member"
             },
             {
                 "last_name": "Solache",
                 "first_name": "Jr",
                 "district_number": 62,
-                "party": "Democrat"
+                "party": "Democrat",
+                "state": "CA",
+                "title": "Assembly Member"
             },
             {
                 "last_name": "Soria",
                 "first_name": "Esmeralda",
                 "district_number": 27,
-                "party": "Democrat"
+                "party": "Democrat",
+                "state": "CA",
+                "title": "Assembly Member"
             },
             {
                 "last_name": "Stefani",
                 "first_name": "Catherine",
                 "district_number": 19,
-                "party": "Democrat"
+                "party": "Democrat",
+                "state": "CA",
+                "title": "Assembly Member"
             },
             {
                 "last_name": "Ta",
                 "first_name": "Tri",
                 "district_number": 70,
-                "party": "Republican"
+                "party": "Republican",
+                "state": "CA",
+                "title": "Assembly Member"
             },
             {
                 "last_name": "Tangipa",
                 "first_name": "David",
                 "district_number": 8,
-                "party": "Republican"
+                "party": "Republican",
+                "state": "CA",
+                "title": "Assembly Member"
             },
             {
                 "last_name": "Valencia",
                 "first_name": "Avelino",
                 "district_number": 68,
-                "party": "Democrat"
+                "party": "Democrat",
+                "state": "CA",
+                "title": "Assembly Member"
             },
             {
                 "last_name": "Wallis",
                 "first_name": "Greg",
                 "district_number": 47,
-                "party": "Republican"
+                "party": "Republican",
+                "state": "CA",
+                "title": "Assembly Member"
             },
             {
                 "last_name": "Ward",
                 "first_name": "Christopher",
                 "district_number": 78,
-                "party": "Democrat"
+                "party": "Democrat",
+                "state": "CA",
+                "title": "Assembly Member"
             },
             {
                 "last_name": "Wicks",
                 "first_name": "Buffy",
                 "district_number": 14,
-                "party": "Democrat"
+                "party": "Democrat",
+                "state": "CA",
+                "title": "Assembly Member"
             },
             {
                 "last_name": "Wilson",
                 "first_name": "Lori",
                 "district_number": 11,
-                "party": "Democrat"
+                "party": "Democrat",
+                "state": "CA",
+                "title": "Assembly Member"
             },
             {
                 "last_name": "Zbur",
                 "first_name": "Rick",
                 "district_number": 51,
-                "party": "Democrat"
+                "party": "Democrat",
+                "state": "CA",
+                "title": "Assembly Member"
             }
         ]
     }

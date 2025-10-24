@@ -37,6 +37,8 @@ class CAStateSenateScraper(BaseScraper):
                 "last_name": name_and_party[1],
                 "district_number": int(re.search(r"\d+", info[2].text).group()),
                 "party": "Democrat" if "D" in name_and_party[2] else "Republican",
+                "state": "CA",
+                "title": "Senator" # TODO get leadership title(s)
             })
         return members
 
@@ -93,7 +95,9 @@ class CAStateAssemblyScraper(BaseScraper):
                 "last_name": name[0],
                 "first_name": name[1],
                 "district_number": int(re.search(r"\d+", info[1]).group()),
-                "party": info[2]
+                "party": info[2],
+                "state": "CA",
+                "title": "Assembly Member" # TODO get leadership title(s)
             })
         return members
     
