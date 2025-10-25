@@ -3,11 +3,10 @@ import json
 import os
 import sys
 
-from datetime import datetime
-
 sys.path.append(os.path.join(os.path.dirname(__file__),'../'))
 
 from scrapers import ca_assembly_scraper, ca_senate_scraper
+
 
 # TODO get past session info
 
@@ -22,8 +21,8 @@ format_string = "%Y-%m-%d"
 
 current_session = {
     "name": "2025-2026 Regular Session",
-    "begin_date": datetime.strptime("2025-01-06", format_string),
-    "end_date": datetime.strptime("2026-12-04", format_string),
+    "begin_date": "2025-01-06",
+    "end_date": "2026-12-04",
     "committees": committees,
     "legislators": senators + assembly_members,
 }

@@ -1,15 +1,16 @@
 # About
 
 ## How to run the service
-
-To run the service:
+With Docker Composes:
 1. Go up a directory `cd ..`
-2. Set environment variable `export MYSQL_PASSWORD=...` 
-3. Running the Docker container: Ensure Docker is running. Then run `docker compose up --build` if running for the first time or `docker compose up -d`
-Running locally: Set `DATA_PATH`, have mysql running, then run `flask --app service run`. 
-If you're running with this set up, use `/data/sessions.json` as `DATA_PATH`.
+2. Set environment variables `export DB_USER=.... && export DB_PASSWORD=...` 
+3. Ensure Docker is running. Then run `docker compose up --build` if running for the first time or `docker compose up -d`
 
-## Currently supported retrieval
+Locally:
+1. Follow steps 1-2 above.
+2. Ensure postgres is running. Then run `flask --app service/application run` from the topmost directory of the repo. 
+
+## Currently supported
 - Get politician by ID
 - Get politician by name
 e.g. Output for `/politicians/bonamici`
@@ -64,65 +65,3 @@ e.g. Output for `/politicians/bonamici`
 - Get a session by ID
 - Get all sessions (2007 to 2025)
 
-## Notes/TODO
-- [ ] Add tests and start TDD.
-- [ ] Getting politician should show during which sessions they served.
-- [ ] Figure out if written SQL queries would be faster than those of ORM.
-- [ ] Add OpenAPI doc
-- [ ] Some of the session and legislator `end_date`s from the OLIS API appear inaccurate or missing. Determine possible data sources for actual end dates. 
-e.g. for sessions
-```
-{
-    "response": [
-        {
-            "begin_date": "2007-06-30",
-            "committees": [
-                {
-                    "id": ...,
-                    "name": "Bottle Bill Task Force"
-                },
-                ...
-            ],
-            "end_date": "2009-01-11",
-            "id": 1,
-            "legislators": [
-                {
-                    "id": 1,
-                    "leg_code": "Rep Barker"
-                },
-                ...
-            ],
-            "name": "2007 - 2008 Interim"
-        },
-    ...
-    ]
-}
-```
-e.g. for legislators when querying politician
-```
-{
-            "begin_date": "2011-06-30",
-            "id": ...,
-            "leg_code": "Rep Barker",
-            "title": "Representative"
-        },
-        ...
-        {
-            "begin_date": "2011-06-30",
-            "id": ...,
-            "leg_code": "Rep Barker",
-            "title": "Representative"
-        },
-        {
-            "begin_date": "2011-06-30",
-            "id": ...,
-            "leg_code": "Rep Barker",
-            "title": "Representative"
-        },
-        {
-            "begin_date": "2011-06-30",
-            "id": ...,
-            "leg_code": "Rep Barker",
-            "title": "Representative"
-        },
-```

@@ -1,8 +1,8 @@
 [
     {
         "name": "2025-2026 Regular Session",
-        "begin_date": "",
-        "end_date": "",
+        "begin_date": "2025-01-06",
+        "end_date": "2026-12-04",
         "committees": [
             {
                 "name": "Agriculture",

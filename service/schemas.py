@@ -1,4 +1,4 @@
-"""Model schemas for JSON ouptut in routes"""
+"""Model schemas for JSON ouptut from routes"""
 
 from marshmallow import Schema, fields
 
@@ -14,6 +14,7 @@ class LegislatorScheme(Schema):
     end_date = fields.Date(allow_none=True)
     session_id = fields.Integer()
     politician_id = fields.Integer()
+    state = fields.String()
 
 
 class CommitteeScheme(Schema):
@@ -30,7 +31,7 @@ class PoliticianScheme(Schema):
     first_name = fields.String()
     last_name = fields.String()
     legislators = fields.Nested(
-        LegislatorScheme, only=('id', 'leg_code', 'title', 'begin_date'), many=True)
+        LegislatorScheme, only=('id', 'leg_code', 'title', 'begin_date', 'state'), many=True)
 
 class SessionScheme(Schema):
     """Output schema for Session model"""

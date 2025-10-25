@@ -8,7 +8,8 @@ class Config(object):
     DEBUG = False
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     SQLALCHEMY_RECORD_QUERIES = False
-    DB_SERVER = "localhost"
+    DB_NAME = "service_db"
+    DB_HOST= "localhost"
 
 
 class DevConfig(Config):
@@ -18,12 +19,9 @@ class DevConfig(Config):
     SQLALCHEMY_TRACK_MODIFICATIONS = True
     SQLALCHEMY_ECHO = "debug"
 
-    MYSQL_USER = "root"
-    MYSQL_DB = "service_db"
-
     @property
     def SQLALCHEMY_DATABASE_URI(self):
-        return f"mysql+pymysql://{self.MYSQL_USER}:{os.getenv('MYSQL_PASSWORD')}@{os.getenv('MYSQL_HOST', self.DB_SERVER)}:3306/{os.getenv('MYSQL_DB')}"
+        return f"postgresql://{os.getenv('DB_USER')}:{os.getenv('DB_PASSWORD')}@{os.getenv('DB_HOST', self.DB_HOST)}:5432/{os.getenv('DB_NAME', self.DB_NAME)}"
 
 
 class TestConfig(Config):

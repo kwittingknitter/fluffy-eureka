@@ -19,3 +19,7 @@ class LegislatorsRepository:
     def get_all(self):
         """Get all from Legislator"""
         return self.db.session.execute(self.db.select(Legislator)).scalars().all()
+
+    def get_by_state(self, state: str):
+        """Get Legislator by state"""
+        return self.db.session.execute(self.db.select(Legislator).where(Legislator.state == state)).scalars().all()

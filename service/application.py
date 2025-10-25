@@ -1,4 +1,5 @@
 """Application factory"""
+import logging 
 
 from flask import Flask
 
@@ -11,6 +12,7 @@ def create_app(config=None):
 
     app = Flask(__name__)
     app.config.from_object(config)
+    app.logger.log(logging.INFO, 'db uri: ', config.SQLALCHEMY_DATABASE_URI)
 
     from .models import db
     db.init_app(app)

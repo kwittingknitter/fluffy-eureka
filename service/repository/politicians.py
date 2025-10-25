@@ -21,6 +21,7 @@ class PoliticiansRepository:
     def search_by_name(self, name: str):
         """Searches for a politican by string (name)
         Returns Politican or None"""
+        # TODO broken
         return self.db.session.execute(
             self.db.select(Politician).where(
                 (Politician.first_name.like(name)) | (Politician.last_name.like(name)))

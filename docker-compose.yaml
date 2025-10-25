@@ -1,25 +1,20 @@
 services:
   db:
-    image: mysql:8.0
+    image: postgres:16-alpine
     ports:
-        - 3306:3306
-    volumes:
-      - ~/apps/postgres:/var/lib/postgresql/data
+      - 5432:5432
     environment:
-      MYSQL_ROOT_PASSWORD: ${MYSQL_PASSWORD}
-      MYSQL_DATABASE: service_db
-    healthcheck:
-      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
-      timeout: 5s
-      retries: 10
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+      POSTGRES_DB: service_db
+      POSTGRES_USER: ${DB_USER}
   service:
     build: .
     ports:
       - 3000:3000
     depends_on:
-      db:
-        condition: service_healthy
+      - db
     environment:
-      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
-      MYSQL_DB: service_db
-      MYSQL_HOST: db
+      DB_PASSWORD: ${DB_PASSWORD}
+      DB_NAME: service_db
+      DB_HOST: db
+      DB_USER: ${DB_USER}

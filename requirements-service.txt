@@ -1,10 +1,6 @@
 Requests==2.32.3
-pylint
-black
-notebook
 Flask
 Flask-SQLAlchemy
 cryptography
 marshmallow
-beautifulsoup4
 psycopg2-binary

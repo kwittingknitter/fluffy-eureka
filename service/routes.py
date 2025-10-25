@@ -46,8 +46,16 @@ def get_legislator_by_id(id: int):
 
 @route_blueprint.route('/legislators')
 def get_legislators():
-    """Get all OR state legislators"""
+    """Get all state legislators"""
     legislators = legislators_repo.get_all()
+    return jsonify({
+        "response": [LegislatorScheme().dump(legislator) for legislator in legislators]
+    })
+
+@route_blueprint.route('/legislators/state/<string:state>')
+def get_legislators_by_state(state: str):
+    """Get all legislators by state"""
+    legislators = legislators_repo.get_by_state(state)
     return jsonify({
         "response": [LegislatorScheme().dump(legislator) for legislator in legislators]
     })
