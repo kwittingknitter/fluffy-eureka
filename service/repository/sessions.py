@@ -19,3 +19,9 @@ class SessionsRepository:
     def get_all(self):
         """Get all from Session"""
         return self.db.session.execute(self.db.select(Session)).scalars().all()
+
+    def get_all_by_state(self, state):
+        """Get Sessions by state"""
+        # TODO
+        return []
+

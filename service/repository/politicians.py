@@ -30,3 +30,9 @@ class PoliticiansRepository:
     def get_all(self):
         """Get all from Politician"""
         return self.db.session.execute(self.db.select(Politician)).scalars().all()
+
+    def get_all_by_state(self, state):
+        """Get all from Politician by state"""
+        # TODO
+        return []
+
