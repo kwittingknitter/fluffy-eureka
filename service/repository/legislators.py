@@ -1,6 +1,7 @@
 """LegislatorsRepository"""
 
 from flask_sqlalchemy import SQLAlchemy
+from sqlalchemy import func
 
 from service.models import Legislator
 
@@ -16,10 +17,12 @@ class LegislatorsRepository:
         """Get Legislator by ID or raise error"""
         return self.db.get_or_404(Legislator, id)
 
-    def get_all(self):
+    def get_all(self, filters: dict = None):
         """Get all from Legislator"""
-        return self.db.session.execute(self.db.select(Legislator)).scalars().all()
-
-    def get_by_state(self, state: str):
-        """Get Legislator by state"""
-        return self.db.session.execute(self.db.select(Legislator).where(Legislator.state == state)).scalars().all()
+        query = self.db.select(Legislator)
+        if filters:
+            if 'state' in filters and filters['state']:
+                query = query.where(
+                    func.lower(Legislator.state) == filters['state'].lower()
+                )
+        return self.db.session.execute(query).scalars().all()

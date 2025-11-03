@@ -51,7 +51,7 @@ class TestRepository(unittest.TestCase):
 
         self.politicians_repository.db.get_or_404.assert_called_once_with(Politician, test_id)
 
-    def test_get_all(self):
+    def test_get_all_no_dict(self):
         """Test getting all"""
         self.committees_repository.get_all()
         self.sessions_repository.get_all()
@@ -70,10 +70,31 @@ class TestRepository(unittest.TestCase):
         self.politicians_repository.db.session.execute.assert_called_once()
         self.politicians_repository.db.select.assert_called_once_with(Politician)
 
-    def test_politicians_search_by_name(self):
-        """Test getting search by name for Politician"""
-        search_string = 'name'
-        self.politicians_repository.search_by_name(search_string)
+    def test_get_all_by_state(self):
+        """Test getting all"""
+        filter = {
+            "state": "ca"
+        }
+        self.sessions_repository.get_all(filter)
+        self.legislators_repository.get_all(filter)
+        self.politicians_repository.get_all(filter)
+
+        self.legislators_repository.db.session.execute.assert_called_once()
+        self.legislators_repository.db.select.assert_called_once_with(Legislator)
+
+        self.sessions_repository.db.session.execute.assert_called_once()
+        self.sessions_repository.db.select.assert_called_once_with(Session)
+
+        self.politicians_repository.db.session.execute.assert_called_once()
+        self.politicians_repository.db.select.assert_called_once_with(Politician)
+
+    def test_politicians_get_all_filters(self):
+        """Test getting Politician using filters"""
+        filters = {
+            'name': 'name',
+            'state': 'or',
+        }
+        self.politicians_repository.get_all(filters)
 
         self.politicians_repository.db.session.execute.assert_called_once()
         self.politicians_repository.db.select.assert_called_once_with(Politician)

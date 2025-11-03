@@ -1,6 +1,6 @@
 """ Routes for Flask app """
 
-from flask import jsonify, Blueprint
+from flask import jsonify, Blueprint, request
 
 from .schemas import PoliticianScheme, LegislatorScheme, SessionScheme
 from .repository import politicians_repo, legislators_repo, sessions_repo
@@ -22,26 +22,16 @@ def get_politician_by_id(id: int):
 
 @route_blueprint.route('/politicians')
 def get_all_politicians():
-    """Get info about all politicians"""
-    politicians = politicians_repo.get_all()
-    return jsonify({
-        "response": [PoliticianScheme().dump(politician) for politician in politicians]
-    })
-
-@route_blueprint.route('/politicians/state/<string:state>')
-def get_all_politicians_by_state(state):
-    """Get info about all politicians filtered by state"""
-    politicians = politicians_repo.get_all_by_state()
-    return jsonify({
-        "response": [PoliticianScheme().dump(politician) for politician in politicians]
-    })
-
-@route_blueprint.route('/politicians/<string:name>')
-def get_politician(name):
-    """Search for politician by name"""
-    politicians = politicians_repo.search_by_name(name)
-    if len(politicians) == 0:
-        return jsonify({"response": []})
+    """Get info about all politicians, filterable by state and name"""
+    filters = {
+        'state': request.args.get('state'),
+        'name': request.args.get('name')
+    }
+    politicians = []
+    if filters['name'] or filters['state']:
+        politicians = politicians_repo.get_all(filters)
+    else:
+        politicians = politicians_repo.get_all()
     return jsonify({
         "response": [PoliticianScheme().dump(politician) for politician in politicians]
     })
@@ -54,16 +44,11 @@ def get_legislator_by_id(id: int):
 
 @route_blueprint.route('/legislators')
 def get_legislators():
-    """Get all state legislators"""
-    legislators = legislators_repo.get_all()
-    return jsonify({
-        "response": [LegislatorScheme().dump(legislator) for legislator in legislators]
-    })
-
-@route_blueprint.route('/legislators/state/<string:state>')
-def get_legislators_by_state(state: str):
-    """Get all legislators by state"""
-    legislators = legislators_repo.get_by_state(state)
+    """Get all state legislators, filterable by state"""
+    filters = {
+        'state': request.args.get('state')
+    }
+    legislators = legislators_repo.get_all(filters)
     return jsonify({
         "response": [LegislatorScheme().dump(legislator) for legislator in legislators]
     })
@@ -77,15 +62,11 @@ def get_session_by_id(id: int):
 @route_blueprint.route('/sessions')
 def get_sessions():
     """Get all sessions"""
-    sessions = sessions_repo.get_all()
-    return jsonify({
-        "response": [SessionScheme().dump(session) for session in sessions]
-    })
-
-@route_blueprint.route('/sessions/state/<string:state>')
-def get_sessions_by_state(state: str):
-    """Get all sessions by state"""
-    sessions = sessions_repo.get_all_by_state(state)
+    filters = {
+        'state': request.args.get('state'),
+        'year': request.args.get('year'),
+    }
+    sessions = sessions_repo.get_all(filters)
     return jsonify({
         "response": [SessionScheme().dump(session) for session in sessions]
     })

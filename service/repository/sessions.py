@@ -2,7 +2,8 @@
 
 from flask_sqlalchemy import SQLAlchemy
 
-from service.models import Session
+from service.models import Session, Legislator
+from sqlalchemy import extract, func
 
 
 class SessionsRepository:
@@ -16,12 +17,12 @@ class SessionsRepository:
         """Get Session by ID or raise error"""
         return self.db.get_or_404(Session, id)
 
-    def get_all(self):
+    def get_all(self, filters: dict = None):
         """Get all from Session"""
-        return self.db.session.execute(self.db.select(Session)).scalars().all()
-
-    def get_all_by_state(self, state):
-        """Get Sessions by state"""
-        # TODO
-        return []
-
+        query = self.db.select(Session)
+        if filters:
+            if 'state' in filters and filters['state']:
+                query = query.where(Session.legislators.any(func.lower(Legislator.state) == filters['state'].lower()))
+            if 'year' in filters and filters['year']:
+                query = query.where(extract('year', Session.begin_date) == filters['year'])
+        return self.db.session.execute(query).scalars().all()
