@@ -1,0 +1,159 @@
+openapi: 3.0.4
+info:
+  title: West Coast State Legislatures
+  description: A service for exploring West Coast state legislative data.
+  version: 1.0.0
+
+servers:
+  - url: 
+      
+
+paths:
+  /politicians:
+    get:
+      summary: Returns one or a list of politicians who have served on state legislatures on the west coast.
+      parameters:
+        - in: path
+          name: id
+          schema:
+            type: integer
+          description: ID
+        - in: query
+          name: name
+          schema:
+            type: string
+          description: Name of politician (first or last)
+        - in: query
+          name: state
+          schema:
+            type: string
+          description: State (currently OR or CA supported)
+      responses:
+        "200":
+          description: A JSON object
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  response:
+                    type: string
+                  value: 
+                    type: array
+                    items:
+                      $ref: "#/components/schemas/Politician"
+  /legislators:
+    get:
+      summary: Returns a list of legislator information
+      parameters:
+        - in: path
+          name: id
+          schema:
+            type: integer
+          description: ID
+        - in: query
+          name: state
+          schema:
+            type: string
+          description: State (currently OR or CA supported)
+      responses:
+        "200": # status code
+          description: A JSON object
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  response:
+                    type: string
+                  value: 
+                    type: array
+                    items:
+                      $ref: "#/components/schemas/Legislator"
+  /sessions:
+    get:
+      summary: Returns a list of legislative sessions.
+      parameters:
+        - in: path
+          name: id
+          schema:
+            type: integer
+          description: ID
+        - in: query
+          name: year
+          schema:
+            type: integer
+          description: Session year
+        - in: query
+          name: state
+          schema:
+            type: string
+          description: State (currently OR or CA supported)
+      responses:
+        "200": # status code
+          description: A JSON object
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  response:
+                    type: string
+                  value: 
+                    type: array
+                    items:
+                      $ref: "#/components/schemas/Session"
+
+                  
+
+components:
+  schemas:
+    Politician:
+      type: object
+      properties: 
+        first_name:
+          type: string
+        last_name:
+          type: string
+          format: date-time
+        legislators:
+          type: list
+    Legislator:
+      type: object
+      properties:
+        title:
+          type: string
+        leg_code:
+          type: string
+        district_number:
+          type: integer
+        party:
+          type: string
+        begin_date:
+          type: string
+          format: date-time
+        end_date:
+          type: string
+          format: date-time
+        state:
+          type: string
+        session_id:
+          type: string
+        politician_id:
+          type: string
+    Session:
+      type: object
+      properties: 
+        name:
+          type: string
+        begin_date:
+          type: string
+          format: date-time
+        end_date:
+          type: string
+          format: date-time
+          nullable: true
+        committees: 
+          type: list
+        legislators:
+          type: list
